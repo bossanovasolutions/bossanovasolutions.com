@@ -1,0 +1,56 @@
+@font-face {
+  font-family: "UNBOUNDED";
+  src: url("@/assets/fonts/Unbounded-VariableFont_wght.ttf");
+}
+
+@font-face {
+  font-family: "HELVETICA";
+  src: url("@/assets/fonts/HelveticaNeue-Roman.otf");
+}
+
+@font-face {
+  font-family: "ESTRAGON";
+  src: url("@/assets/fonts/ABCEstragonVariable-Trial.ttf");
+}
+
+html,
+body {
+  overflow: hidden;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background-color: #f5f5f7;
+}
+
+.v-overlay-container,
+.v-application {
+  [class*="text-"] {
+    font-family: HELVETICA, sans-serif !important;
+  }
+  font-family: HELVETICA, sans-serif !important;
+
+  .v-btn__content {
+    font-family: UNBOUNDED;
+  }
+
+  .v-input {
+    .v-input__details {
+      padding-top: 6px;
+      min-height: auto;
+      padding-bottom: 6px;
+
+      .v-messages {
+        color: #ffd53b;
+      }
+    }
+  }
+}
+
+.font-estragon {
+  font-family: ESTRAGON;
+}
+
+.font-helvetica {
+  font-family: HELVETICA;
+}
