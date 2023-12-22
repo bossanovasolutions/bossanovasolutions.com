@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import emailjs from "@emailjs/browser";
-import { ref } from "vue";
-import { useDisplay } from "vuetify";
+import emailjs from '@emailjs/browser';
+import { ref } from 'vue';
+import { useDisplay } from 'vuetify';
 
 const isMobile = useDisplay().mobile;
 
@@ -12,10 +12,10 @@ interface User {
   message?: string;
 }
 const user = ref<User>({
-  name: "",
-  email: "",
-  phone: "",
-  message: "",
+  name: '',
+  email: '',
+  phone: '',
+  message: '',
 });
 const form = ref();
 const loading = ref<boolean>();
@@ -28,18 +28,18 @@ const open = (): void => {
   success.value = false;
   error.value = false;
   user.value = {
-    name: "",
-    email: "",
-    phone: "",
-    message: "",
+    name: '',
+    email: '',
+    phone: '',
+    message: '',
   };
 };
 
 const rules = {
-  required: (value: string) => !!value || "Field is required",
+  required: (value: string) => !!value || 'Field is required',
   email: (value: string) =>
     /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(value) ||
-    "Email invalid",
+    'Email invalid',
 };
 
 const sendContact = async () => {
@@ -47,10 +47,10 @@ const sendContact = async () => {
 
   try {
     await emailjs.send(
-      "service_rhxy5ff",
-      "template_fgqgjkl",
+      'service_rhxy5ff',
+      'template_fgqgjkl',
       user.value,
-      "0ZnsC442gsB_zxMJa",
+      '0ZnsC442gsB_zxMJa'
     );
     success.value = true;
   } catch (err) {
@@ -64,7 +64,7 @@ defineExpose({ open });
 </script>
 
 <template>
-  <v-dialog width="450" v-model="show" :scrim="false" :fullscreen="isMobile">
+  <v-dialog v-model="show" :scrim="false" :fullscreen="isMobile">
     <v-card class="bg-primary pa-4" :class="{ short: success }">
       <v-snackbar v-model="error" color="error">
         Sorry but we couldn't send your message.<br />
@@ -109,7 +109,10 @@ defineExpose({ open });
       </v-fade-transition>
 
       <v-fade-transition leave-absolute mode="in-out">
-        <v-card-text class="pa-0 d-flex align-center" v-if="!success">
+        <v-card-text
+          class="pa-0 d-flex align-center justify-center"
+          v-if="!success"
+        >
           <v-form @submit.prevent="sendContact" ref="form">
             <h3 class="text-body-1">
               Do you need Coding or Product Design services?<br />
@@ -146,6 +149,7 @@ defineExpose({ open });
               flat
               density="comfortable"
               :rules="[rules.required]"
+              v-mask-number
             />
 
             <v-textarea

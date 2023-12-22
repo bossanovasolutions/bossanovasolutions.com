@@ -5,13 +5,18 @@
  */
 
 // Plugins
-import vuetify from "./vuetify";
+import vuetify from './vuetify';
 
 // Types
-import type { App } from "vue";
+import type { App } from 'vue';
 
-import Vue3Marquee from "vue3-marquee";
+import Vue3Marquee from 'vue3-marquee';
+
+// CUSTOM DIRECTIVES
+import registerDirectives from './directives';
 
 export function registerPlugins(app: App) {
   app.use(vuetify).use(Vue3Marquee);
+
+  registerDirectives(app);
 }

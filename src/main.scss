@@ -1,16 +1,16 @@
 @font-face {
-  font-family: "UNBOUNDED";
-  src: url("@/assets/fonts/Unbounded-VariableFont_wght.ttf");
+  font-family: 'UNBOUNDED';
+  src: url('@/assets/fonts/Unbounded-VariableFont_wght.ttf');
 }
 
 @font-face {
-  font-family: "HELVETICA";
-  src: url("@/assets/fonts/HelveticaNeue-Roman.otf");
+  font-family: 'HELVETICA';
+  src: url('@/assets/fonts/HelveticaNeue-Roman.otf');
 }
 
 @font-face {
-  font-family: "ESTRAGON";
-  src: url("@/assets/fonts/ABCEstragonVariable-Trial.ttf");
+  font-family: 'ESTRAGON';
+  src: url('@/assets/fonts/ABCEstragonVariable-Trial.ttf');
 }
 
 html,
@@ -25,7 +25,7 @@ body {
 
 .v-overlay-container,
 .v-application {
-  [class*="text-"] {
+  [class*='text-'] {
     font-family: HELVETICA, sans-serif !important;
   }
   font-family: HELVETICA, sans-serif !important;
