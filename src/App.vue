@@ -9,7 +9,7 @@ const formDialog = ref();
   <v-app class="bg-transparent">
     <v-main>
       <div
-        class="d-flex flex-column align-center justify-space-between h-screen py-16"
+        class="d-flex flex-column align-center justify-space-between h-screen py-16 home"
       >
         <h1>
           <img
@@ -85,10 +85,17 @@ const formDialog = ref();
   z-index: -1;
   height: 100dvh;
   transform: translateX(20%);
+  opacity: 0.99;
 
-  @media (min-width: 960px) {
+  @media (min-width: 960px) or ((max-height: 450px) and (max-width: 959px)) {
     width: 100dvw;
     transform: none;
+  }
+}
+
+.home {
+  @media (max-height: 450px) {
+    padding: 16px 0 !important;
   }
 }
 

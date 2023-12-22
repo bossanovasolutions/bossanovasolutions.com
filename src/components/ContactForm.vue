@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import emailjs from '@emailjs/browser';
-import { ref } from 'vue';
+import { computed, ref } from 'vue';
 import { useDisplay } from 'vuetify';
 
 const isMobile = useDisplay().mobile;
@@ -60,11 +60,19 @@ const sendContact = async () => {
   loading.value = false;
 };
 
+const width = computed(() => (isMobile.value ? '100%' : '450'));
+
 defineExpose({ open });
 </script>
 
 <template>
-  <v-dialog v-model="show" :scrim="false" :fullscreen="isMobile">
+  <v-dialog
+    v-model="show"
+    :scrim="false"
+    :fullscreen="isMobile"
+    :scrollable="false"
+    :width="width"
+  >
     <v-card class="bg-primary pa-4" :class="{ short: success }">
       <v-snackbar v-model="error" color="error">
         Sorry but we couldn't send your message.<br />
