@@ -63,7 +63,7 @@ const formDialog = ref();
         </div>
       </div>
 
-      <video autoPlay loop muted class="bg-video">
+      <video autoplay loop muted class="bg-video">
         <source
           src="@/assets/videos/fundo_site_construcao.mp4"
           type="video/mp4"
