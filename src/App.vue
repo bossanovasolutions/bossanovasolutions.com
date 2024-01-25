@@ -83,12 +83,12 @@ const formDialog = ref();
   right: 0;
   object-fit: cover;
   z-index: -1;
-  height: 100dvh;
+  height: 100vh;
   transform: translateX(20%);
   opacity: 0.99;
 
   @media (min-width: 960px) or ((max-height: 450px) and (max-width: 959px)) {
-    width: 100dvw;
+    width: 100vw;
     transform: none;
   }
 }
