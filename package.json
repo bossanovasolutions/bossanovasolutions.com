@@ -11,6 +11,7 @@
     "@emailjs/browser": "^3.11.0",
     "@mdi/font": "7.0.96",
     "vue": "^3.2.0",
+    "vue-router": "4",
     "vue3-marquee": "^4.1.0",
     "vuetify": "^3.0.0"
   },
