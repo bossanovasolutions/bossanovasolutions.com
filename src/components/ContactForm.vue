@@ -122,10 +122,20 @@ defineExpose({ open });
           v-if="!success"
         >
           <v-form @submit.prevent="sendContact" ref="form">
-            <h3 class="text-body-1">
-              Do you need Coding or Product Design services?<br />
+            <p class="text-body-1 d-none d-md-block">
+              Do you need Coding or Product Design services?
+              <br />
               Then fill the form below and we will get in touch soon.
-            </h3>
+            </p>
+
+            <p class="text-body-1 d-block d-md-none">
+              Looking for coding expertise or innovative product, software, and
+              app design?
+            </p>
+            <p class="mt-4">
+              Fill out the form below, and we'll connect with you to bring your
+              ideas to life!
+            </p>
 
             <v-text-field
               placeholder="Full Name"
@@ -197,11 +207,11 @@ defineExpose({ open });
 }
 
 .v-card {
-  border-radius: 16px !important;
   transition: all ease-in-out 200ms;
 
   @media (min-width: 960px) {
-    height: 578px;
+    border-radius: 16px !important;
+    height: 630px;
     overflow: hidden !important;
 
     &.short {

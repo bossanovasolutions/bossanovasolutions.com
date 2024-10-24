@@ -19,22 +19,37 @@ const formDialog = ref();
           />
         </h1>
 
-        <div class="text-center">
-          <h2 class="text-zinc px-14 px-md-0">
-            Our website is under construction, but you can
+        <div class="px-6 px-md-0">
+          <h2>
+            We&apos;ve been busy working to
             <br class="d-none d-md-inline" />
-            request a contact and we&apos;ll call you back in no time.
+            create incredible solutions for
+            <br class="d-none d-md-inline" />
+            our clients!
           </h2>
 
+          <p class="mt-6">
+            Our own website is on the way, so stay tuned for
+            <br class="d-none d-md-inline" />
+            something just as extraordinary.
+          </p>
+
+          <p class="mt-6">In the meantime, we&apos;d love to hear from you!</p>
+
+          <p class="small mt-6">
+            If you have a project in mind or just want to connect, drop us your
+            contact info.
+          </p>
+
           <v-btn
-            class="rounded-xl text-none mt-8 mx-auto"
+            class="rounded-xl text-none mt-8"
             size="x-large"
             color="primary"
             variant="flat"
             :ripple="false"
             @click="formDialog.open()"
           >
-            Request a contact
+            Connect with us
           </v-btn>
         </div>
 
@@ -94,7 +109,7 @@ const formDialog = ref();
 }
 
 .home {
-  @media (max-height: 450px) {
+  @media (max-height: 764px) {
     padding: 16px 0 !important;
   }
 }
@@ -105,10 +120,41 @@ const formDialog = ref();
 }
 
 h2 {
+  color: rgb(var(--v-theme-primary)) !important;
   font-weight: normal;
-  font-size: 1.5rem;
-  line-height: 2rem;
+  font-size: 1.65rem;
+  line-height: 2.5rem;
   font-family: UNBOUNDED;
+  text-align: left;
+
+  @media (min-width: 960px) {
+    font-size: 2.5rem;
+    line-height: 3rem;
+  }
+}
+
+p {
+  font-size: 1.13rem;
+  line-height: 1.69rem;
+  color: #646465;
+  font-family: UNBOUNDED;
+  text-align: left;
+
+  @media (min-width: 960px) {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+}
+
+p.small {
+  color: rgb(var(--v-theme-primary)) !important;
+  font-size: 0.94rem;
+  line-height: 1.4rem;
+
+  @media (min-width: 960px) {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
 }
 
 .v-btn {
@@ -118,6 +164,9 @@ h2 {
 }
 
 .slider {
+  @media (max-height: 764px) {
+    display: none;
+  }
   .vue3-marquee.horizontal {
     overflow: hidden;
   }
