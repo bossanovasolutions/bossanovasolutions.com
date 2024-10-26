@@ -1,8 +1,20 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { onMounted, ref } from 'vue';
 import ContactForm from './components/ContactForm.vue';
 
 const formDialog = ref();
+
+const removeControls = () => {
+  video.value.controls = false;
+};
+const video = ref();
+
+onMounted(() => {
+  removeControls();
+  video.value.play();
+  video.value.addEventListener('play', removeControls);
+  video.value.addEventListener('pause', removeControls);
+});
 </script>
 
 <template>
@@ -78,12 +90,20 @@ const formDialog = ref();
         </div>
       </div>
 
-      <video autoplay loop muted playsinline class="bg-video">
+      <video
+        autoplay
+        loop
+        muted
+        playsinline
+        class="bg-video"
+        id="video"
+        preload="auto"
+        ref="video"
+      >
         <source
           src="@/assets/videos/fundo_site_construcao.mp4"
           type="video/mp4"
         />
-        Your browser does not support the video tag.
       </video>
 
       <ContactForm ref="formDialog" />
@@ -105,6 +125,10 @@ const formDialog = ref();
   @media (min-width: 960px) or ((max-height: 450px) and (max-width: 959px)) {
     width: 100vw;
     transform: none;
+  }
+
+  @media (max-height: 667px) {
+    height: 105vh;
   }
 }
 

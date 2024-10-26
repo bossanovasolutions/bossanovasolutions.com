@@ -122,17 +122,11 @@ defineExpose({ open });
           v-if="!success"
         >
           <v-form @submit.prevent="sendContact" ref="form">
-            <p class="text-body-1 d-none d-md-block">
-              Do you need Coding or Product Design services?
-              <br />
-              Then fill the form below and we will get in touch soon.
-            </p>
-
-            <p class="text-body-1 d-block d-md-none">
+            <p class="text-body-1">
               Looking for coding expertise or innovative product, software, and
               app design?
             </p>
-            <p class="mt-4">
+            <p class="mt-4 text-body-1">
               Fill out the form below, and we'll connect with you to bring your
               ideas to life!
             </p>

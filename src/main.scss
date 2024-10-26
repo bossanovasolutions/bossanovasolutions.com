@@ -15,7 +15,12 @@
 
 html,
 body {
-  overflow: hidden;
+  overflow: auto;
+  overflow-x: hidden;
+
+  @media (min-height: 669px) {
+    overflow: hidden;
+  }
 }
 
 body {
